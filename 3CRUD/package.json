@@ -1,0 +1,17 @@
+{
+  "name": "crud-main",
+  "version": "1.0.0",
+  "description": "dynamicCRUD me update ko use krna thoda kathin hota hai lekin isme update use krna aasan hoga aur baki ke bhi CRUD operations use krna aasan hai.",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashish Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4"
+  }
+}

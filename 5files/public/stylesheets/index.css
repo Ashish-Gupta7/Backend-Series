@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+*::selection{
+    background-color: #000;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+}
+
+.page1 {
+    height: 35%;
+    width: 100%;
+    padding: 2vw;
+    overflow-y: hidden;
+}
+
+.page1 form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1vh;
+}
+
+.page1 form .insideForm:focus {
+    border: 1px solid #222222;
+}
+
+.page1 form #textarea {
+    resize: none;
+}
+
+.page1 form .insideForm::placeholder {
+    color: #eeeeeeb6;
+    letter-spacing: 0.1vw;
+    font-size: 0.8vw;
+}
+
+.page1 form .insideForm#submit {
+    width: 8.5%;
+    background-color: #969696;
+    color: #000;
+    font-weight: 600;
+}
+
+.page1 form .insideForm#submit:hover {
+    background-color: #d5d0d0;
+}
+
+.page2 {
+    height: 65%;
+    width: 100%;
+    padding: 2vw;
+    overflow-y: auto;
+}
+
+.page2 .pg2Fix {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 1.1vh;
+}
+
+.page2 .pg2Fix h3 {
+    border-right: 1px solid #969696;
+    color: #969696;
+}
+
+.page2 .pg2File {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin-top: 0.3vh;
+}
+
+.page2 h3,
+.page2 h4,
+.page2 .pg2FilesArea .pg2File .name i {
+    font-size: 1vw;
+    color: #eee;
+    font-weight: 500;
+}
+
+.page2 h4,
+.page2 .pg2FilesArea a {
+    text-decoration: none;
+}
+
+.page2 .name {
+    width: 12%;
+}
+.page2 .data {
+    width: 30%;
+}
+.page2 .time {
+    width: 12%;
+}
+.page2 .type {
+    width: 12%;
+}
+.page2 .size {
+    width: 10%;
+}
+.page2 .edit {
+    width: 10%;
+}
+.page2 .delete {
+    width: 8.8%;
+}
+.page2 .pg2FilesArea .pg2File .delete, .page2 .pg2FilesArea .pg2File .edit{
+    display: block;
+    color: #eee;
+    cursor: pointer;
+}
+.page2 .pg2FilesArea .pg2File .edit:hover{
+    color: royalblue;
+}
+.page2 .pg2FilesArea .pg2File .delete:hover {
+    color: red;
+}
+.page2 .pg2FilesArea .pg2File .txtEllip {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.page2 .pg2FilesArea .pg2File .txtEllip h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page2 .pg2FilesArea .pg2File .txtEllip:hover h4,
+.page2 .pg2FilesArea .pg2File .txtEllip:hover i {
+    color: yellow;
+}
+
+.page2 .pg2FilesArea .pg2File .name {
+    display: flex;
+    align-items: center;
+    gap: 0.3vw;
+}
+
+.pg2FilesArea {
+    overflow-y: auto;
+    height: 360px;
+}
+
+.page2 .pg2FilesArea .pg2File,
+.page2 .pg2Fix {
+    padding: 0.1vw 0.3vw;
+}
+
+.pg2File:hover {
+    background-color: #252525;
+}
+
+.pg2FilesArea::-webkit-scrollbar {
+    width: 0px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 20px #222222 inset;
+    -webkit-text-fill-color: #eeeeeeb6;
+}
+
+.page1 form .insideForm {
+    width: 100%;
+    background-color: #222;
+    outline: none;
+    border: 1px solid #252525;
+    color: #eee;
+    padding: 0.7vw 1vw;
+}
+
+.page2 .pg2FilesArea .noFiles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-weight: 600;
+    color: #333333;
+}

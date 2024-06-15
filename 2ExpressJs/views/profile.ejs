@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+
+</head>
+
+<body>
+
+  <body>
+    <div class="glassmorphic-container">
+      <div class="profile-card">
+        <img src="https://i.imgur.com/vUNQMEQ.png" alt="Profile Picture Day" class="profile-picture"
+          id="profile-picture-day">
+        <img src="https://i.imgur.com/HWJaelR.png" alt="Profile Picture Night" class="profile-picture"
+          id="profile-picture-night" style="display: none;">
+        <h2 class="username">Guest 001+ <%= ptanhi %>
+        </h2> <!-- edited for dynamic content -->
+        <p class="user-bio">Web Developer of MindLink</p>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="skills">
+          <h3>Skills</h3>
+          <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">React</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">Node.js</div>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+        <button id="mode-switch">Midnight Mode</button>
+      </div>
+    </div>
+  </body>
+  <script src="/javascript/script.js"></script>
+
+
+</html>

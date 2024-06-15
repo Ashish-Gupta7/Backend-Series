@@ -1,0 +1,5 @@
+{
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.ignoreBracketedPasteMode": false,
+    "terminal.integrated.rightClickBehavior": "paste"
+}

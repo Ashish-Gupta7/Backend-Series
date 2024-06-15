@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full min-h-screen bg-zinc-900 text-white p-10">
+        <div class="flex justify-end">
+            <a class="bg-red-500 px-5 py-2 text-sm rounded-md inline-block" href="/profile">Back</a>
+        </div>
+        <h5 class="mb-5">You can upload your profile picture.</h5>
+        <form action="/profile-picture/upload" method="post" enctype="multipart/form-data">
+            <input class="cursor-pointer" type="file" name="profilePicture">
+            <input class="mt-2 px-5 py-2 text-sm bg-blue-500 block rounded-md" type="submit" value="Create new post">
+        </form>
+    </div>
+</body>
+
+</html>

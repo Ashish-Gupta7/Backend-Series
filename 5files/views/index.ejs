@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Files</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+
+<body>
+    <div id="main">
+        <div class="page1">
+            <form action="/createFile" method="post">
+                <input type="text" name="fileName" placeholder="File Name" id="text" class="insideForm">
+
+                <textarea name="fileData" placeholder="Write here file's Data..." id="textarea" cols="30" rows="5"
+                    class="insideForm"></textarea>
+
+                <input type="submit" value="Create File" id="submit" class="insideForm">
+            </form>
+        </div>
+        <div class="page2">
+            <div class="pg2Fix">
+                <h3 class="name">Name</h3>
+                <h3 class="data">Data</h3>
+                <h3 class="time">Date Modified</h3>
+                <h3 class="type">Type</h3>
+                <h3 class="size">Size</h3>
+                <h3 class="size">Edit</h3>
+                <h3 class="delete">Delete</h3>
+            </div>
+            <div class="pg2FilesArea">
+                <% if(files.length > 0){ %>
+                    <% fileDetail.forEach(elm=> { %>
+                        <div class="pg2File">
+                            <a href="<%- `open/${elm.fileName}` %>" class="name txtEllip">
+                                <i class="ri-file-3-line"></i>
+                                <h4>
+                                    <%= elm.fileName %>
+                                </h4>
+                            </a>
+                            <h4 class="data txtEllip">
+                                <%= elm.fileData %>
+                            </h4>
+                            <h4 class="time txtEllip">
+                                <%= elm.fileDate %>
+                            </h4>
+                            <h4 class="type txtEllip">
+                                <%= elm.fileType %>
+                            </h4>
+                            <h4 class="size txtEllip">
+                                <%= elm.fileSize %>
+                            </h4>
+                            <a href="<%- `editFile/${elm.fileName}` %>" class="edit txtEllip">Edit/Update File</a>
+                            <a href="<%- `deleteFile/${elm.fileName}` %>" class="delete"><i class="ri-delete-bin-fill"></i></a>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <h2 class="noFiles">No files at this time!</h2>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/javascript/script.js"></script>
+</body>
+
+</html>

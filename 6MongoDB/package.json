@@ -1,0 +1,17 @@
+{
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "CRUD operations for MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ashish Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.3"
+  }
+}

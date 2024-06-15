@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuthBase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-screen bg-zinc-900 text-white px-7 py-5" id="main">
+        <h2 class="text-3xl mb-2">Login your account</h2>
+        <form action="/login" method="post">
+            <input class="bg-transparent px-3 py-1.5 rounded-md border-2 border-zinc-700 outline-none" type="email" name="email" id="email" placeholder="Enter your email">
+            <input class="bg-transparent px-3 py-1.5 rounded-md border-2 border-zinc-700 outline-none" type="password" name="password" id="password" placeholder="Enter your password">
+            <input class="bg-blue-700 border-none rounded-md px-4 py-1.5" type="submit" value="Login">
+        </form>
+        <a href="/" class="bg-blue-700 border-none rounded-md px-4 py-1.5 mt-3 block max-w-max">Create Account</a>
+    </div>
+</body>
+</html>

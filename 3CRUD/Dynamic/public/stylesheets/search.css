@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    padding: 10px;
+    color: blue;
+}
+#main form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#main form .input{
+    background-color: #eee;
+    padding: 7px 12px;
+    outline: none;
+    border: 1px solid #111;
+    margin: 3px;
+}
+#main form .input.submit{
+    background-color: crimson;
+    color: #eee;
+}

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+*::selection{
+    background-color: #000;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+#main {
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1vh;
+    padding: 2.5vw 2vw 2vw;
+}
+form .insideForm:focus {
+    border: 1px solid #222222;
+}
+form #textarea {
+    resize: none;
+}
+form .insideForm::placeholder {
+    color: #eeeeeeb6;
+    letter-spacing: .1vw;
+    font-size: .8vw;
+}
+form .insideForm#submit {
+    width: 8.5%;
+    background-color: #969696;
+    color: #000;
+    font-weight: 600;
+}
+form .insideForm#submit:hover {
+    background-color: #d5d0d0;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 20px #222222 inset;
+    -webkit-text-fill-color: #eeeeeeb6;
+}
+form .insideForm {
+    width: 100%;
+    background-color: #222;
+    outline: none;
+    border: 1px solid #252525;
+    color: #eee;
+    padding: .7vw 1vw;
+}
+form .inp_flex{
+    width: 100%;
+}
+form .inp_flex a{
+    text-decoration: none;
+}
+form .inp_flex i{
+    font-size: 1.5vw;
+    color: #eeeeeeb6;
+    margin-left: 1vh;
+    padding: .5vw .53vw;
+    background-color: #222222;
+    transition: all ease .2s;
+}
+form .inp_flex i:hover{
+    background-color: red;
+    color: #eee;
+}
+.inp_flex{
+    display: flex;
+    align-items: center;
+}
+form .save_del .save, form .save_del a {
+    width: 8.5%;
+    background-color: #969696;
+    color: #000;
+    font-size: .9vw;
+    text-decoration: none;
+    font-weight: 600;
+    padding: .6vw;
+    border: none;
+    transition: all ease .2s;
+    text-align: center;
+}
+form .save_del .save:hover {
+    background-color: #d5d0d0;
+}
+form .save_del a:nth-child(1):hover{
+    background-color: #d5d0d0;
+}
+form .save_del a:nth-child(2){
+    margin-left: 1vh;
+}
+form .save_del a:hover {
+    background-color: red;
+}

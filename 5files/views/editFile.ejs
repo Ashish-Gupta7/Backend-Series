@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit File</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/editFile.css">
+</head>
+
+<body>
+    <div id="main">
+        <form action="/editFile/<%= efname %>" method="POST">
+            <div class="name_back inp_flex">
+                <input type="text" value="<%= efname %>" name="efname" id="text" class="insideForm" disabled>
+                <a href="/"><i class="ri-close-line"></i></a>
+            </div>
+            <textarea name="efdata" id="textarea" cols="30" rows="32" class="insideForm"><%= efdata %></textarea>
+            <div class="bottom">
+                <a href="/editFile/editFileName/<%= efname %>" class="editFileName">Edit File Name</a>
+                <div class="save_del inp_flex">
+                    <input type="submit" value="Save File" class="save" id="save">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="/javascript/editFile.js"></script>
+</body>
+
+</html>

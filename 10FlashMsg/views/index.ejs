@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Msg Example</title>
+</head>
+<body>
+    <% if(successMsg.length > 0){ %>
+        <div style="background-color: #8bc34a; color: #fff; padding: 10px; margin-bottom: 10px;">
+            <%= successMsg %>    
+        </div>
+    <% } %>
+
+    <% if(errorMsg.length > 0){ %>
+        <div style="background-color: #f44336; color: #fff; padding: 10px; margin-bottom: 10px;">
+            <%= errorMsg %>  
+        </div>
+    <% } %>
+
+    <a style="display: block; margin-bottom: 10px;" href="/success">show success msg</a>
+    <a href="/error">show error msg</a>
+</body>
+</html>

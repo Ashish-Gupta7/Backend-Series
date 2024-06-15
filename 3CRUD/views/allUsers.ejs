@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/allUsers.css">
+</head>
+<body>
+    <div id="main">
+        <div class="header">
+            <a href="/">Create new user</a>
+            <h1>All Users</h1>
+        </div>
+        <% if(allUsers.length > 0){ %>
+            <% allUsers.forEach(elm => { %>
+                <div class="user">
+                    <div class="id"><span>id: </span><%= elm.id %></div>
+                    <div class="data">
+                        <div class="name"><span>name: </span><%= elm.name %></div>
+                        <div class="age"><span>age: </span><%= elm.age %></div>
+                        <div class="pass"><span>password: </span><%= elm.password %></div>
+                    </div>
+                    <div class="anchor">
+                        <a href="/delete/<%= elm.id %>">Delete user</a>
+                        <a href="/update/<%= elm.id %>">Update user</a>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else{ %>
+            <h1>No user has been created!</h1>
+        <% } %>
+    </div>
+</body>
+</html>

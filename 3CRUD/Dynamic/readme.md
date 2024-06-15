@@ -1,0 +1,2 @@
+## Dynameic User
+`Dynamic User means ise user khud hi create kr skta hai delete kr skta hai read kr skta hai aur update bhi kr skta hai, lekin maine abhi jo sabhi ke liye alag alag routes banaye hai isme update krna thoda kathin ho jata hai.`

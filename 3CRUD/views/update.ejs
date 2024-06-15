@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/update.css">
+</head>
+<body>
+    <div id="main">
+        <form action="/update/<%= findUser._id %>" method="post">
+            <input type="text" name="name" class="inp name" value="<%= findUser.name %>">
+            <input type="number" name="age" class="inp number" value="<%= findUser.age %>">
+            <input type="password" name="password" class="inp password" value="<%= findUser.password %>">
+            <input type="submit" value="Update this user" class="inp submit">
+        </form>
+    </div>
+</body>
+</html>

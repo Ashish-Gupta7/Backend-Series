@@ -1,0 +1,219 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f3f4f6;
+    font-family: 'Arial', sans-serif;
+    transition: background 0.3s ease;
+}
+
+.glassmorphic-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    width: 400px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.profile-card {
+    text-align: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.3);
+    }
+
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.username {
+    font-size: 30px;
+    margin: 10px 0;
+    color: #4c4cff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #4c4cff, 0 0 35px #4c4cff, 0 0 40px #4c4cff, 0 0 50px #4c4cff;
+    }
+
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px #4c4cff, 0 0 40px #4c4cff, 0 0 50px #4c4cff, 0 0 60px #4c4cff;
+    }
+}
+
+.user-bio {
+    color: #666;
+    margin: 5px 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4c4cff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(76, 76, 255, 0.1);
+    box-shadow: 0 0 10px rgba(76, 76, 255, 0.3);
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(76, 76, 255, 0.3);
+}
+
+.skills {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    color: #4c4cff;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 10px;
+    background-color: #4c4cff;
+    transition: width 0.5s ease;
+}
+
+#mode-switch {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4c4cff;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#mode-switch:hover {
+    background-color: #7878ff;
+}
+
+.dark-mode body {
+    background: #0a0a0a;
+    color: #fff;
+}
+
+.dark-mode .glassmorphic-container {
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    border: none;
+}
+
+.dark-mode .profile-card {
+    border: 1px solid #555;
+}
+
+.dark-mode .profile-picture {
+    box-shadow: 0 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .username {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .user-bio {
+    color: #bbb;
+}
+
+.dark-mode .nav-links a,
+.dark-mode .skill-name {
+    color: #fff;
+}
+
+.dark-mode .nav-links a {
+    background-color: rgba(76, 76, 255, 0.1);
+    box-shadow: 0 0 10px rgba(76, 76, 255, 0.3);
+}
+
+.dark-mode .nav-links a:hover {
+    background-color: rgba(76, 76, 255, 0.3);
+}
+
+.dark-mode .skills {
+    border-top: 1px solid #555;
+}
+
+.dark-mode .skill-name {
+    color: #fff;
+}
+
+.dark-mode .skill-bar {
+    background-color: #333;
+}
+
+.dark-mode .skill-level {
+    background-color: #6c63ff;
+}
+
+.dark-mode #mode-switch {
+    background-color: #ff9800;
+}
+
+.dark-mode #mode-switch:hover {
+    background-color: #ffcc80;
+}

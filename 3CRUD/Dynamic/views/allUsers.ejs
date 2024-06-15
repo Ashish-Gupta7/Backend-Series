@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/allUsers.css">
+</head>
+
+<body>
+    <h1>All Users</h1>
+    <div class="anchor">
+        <a href="/">create new user</a>
+        <a href="/search">search user</a>
+        <a href="/delete">delete user</a>
+        <a href="/update">update user</a>
+    </div>
+    <% allUsers.forEach(elm => { %>
+        <div id="main">
+            <h2><span>Name:</span>
+                <%= elm.name %>
+            </h2>
+            <h2><span>Age:</span>
+                <%= elm.age %>
+            </h2>
+            <h2><span>Password:</span>
+                <%= elm.password %>
+            </h2>            
+        </div>
+    <% }); %>
+</body>
+
+</html>

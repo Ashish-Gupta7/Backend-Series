@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Files</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/openFile.css">
+</head>
+
+<body>
+    <div id="main">
+        <form>
+            <div class="name_back inp_flex">
+                <input type="text" value="<%= openFile %>" name="fileName" id="text" class="insideForm" disabled>
+                <a href="/"><i class="ri-close-line"></i></a>
+            </div>
+            <textarea name="fileData" id="textarea" cols="30" rows="32" class="insideForm" disabled><%= data %></textarea>
+            <div class="save_del inp_flex">
+                <a href="/editFile/<%= openFile %>" class="edit ed">Edit File</a>
+                <a href="<%- `openDelFile/${openFile}` %>" class="delete ed">Delete File</a>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

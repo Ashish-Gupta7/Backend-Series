@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/createdUser.css">
+</head>
+
+<body>
+    <a href="/">Create new user</a>
+    <a href="/allUsers">See all users</a>
+    <div id="main">
+        <h2><span>Name:</span>
+            <%= newUser.name %>
+        </h2>
+        <h2><span>Age:</span>
+            <%= newUser.age %>
+        </h2>
+        <h2><span>Password:</span>
+            <%= newUser.password %>
+        </h2>
+    </div>
+</body>
+
+</html>
