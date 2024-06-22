@@ -373,7 +373,7 @@ res.send('error hai', { error: err }); // Error hai print kr dega aur error bhi 
 HTTP headers, HTTP (Hypertext Transfer Protocol) mein information exchange karne ke liye use kiye jaane wale metadata pieces hote hain. Jab aap kisi web server se request karte hain, to aapki request ke saath kuch headers bheje jaate hain. Server aapki request ko process karta hai aur phir response ke saath bhi headers bhejta hai.
 
 Yeh headers ke kuch common types hain:
-<a href="D:\Telegram Desktop\@Team_Groww_Study2 - Delta 1.0\Day - 26 (06_08_23)\31. JavaScript (Part 12)\13. Https Headers.mp4">Open Documents Folder</a>
+`D:\Telegram Desktop\@Team_Groww_Study2 - Delta 1.0\Day - 26 (06_08_23)\31. JavaScript (Part 12)\13. Https Headers.mp4`
 1. Request Headers:
    - Request headers client dwara server ko bheje jaate hain.
    Ye request ki details jaise ki content type, content length, authentication details, caching instructions, etc. bataate hain.
