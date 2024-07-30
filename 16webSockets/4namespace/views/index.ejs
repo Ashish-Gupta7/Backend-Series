@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1></h1>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"
+    integrity="sha512-luMnTJZ7oEchNDZAtQhgjomP1eZefnl82ruTH/3Oj/Yu5qYtwL7+dVRccACS/Snp1lFXq188XFipHKYE75IaQQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // // default '/' namespace
+    // const socket = io();
+    // socket.on("message", function (data) {
+    //   document.querySelector("h1").innerText = data;
+    // });
+
+    // // custom '/chat' namespace
+    // const socketChat = io("/chat");
+    // socketChat.on("message", function (data) {
+    //   document.querySelector("h1").innerText = data;
+    // });
+
+    // custom '/news' namespace
+    const socketNews = io("/news");
+    socketNews.on("message", function (data) {
+      document.querySelector("h1").innerText = data;
+    });
+  </script>
+</body>
+
+</html>

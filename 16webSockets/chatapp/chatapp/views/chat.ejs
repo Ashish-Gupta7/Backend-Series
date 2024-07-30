@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="fixed overlay w-full h-screen z-[9999] bg-zinc-100 top-0 left-0">
+        <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 p-4 border bg-white rounded">
+            <input class="nameinput px-3 py-2 rounded border outline-none" type="text" placeholder="Enter Your Name">
+            <button class="setbtn px-3 py-2 bg-blue-500 text-white rounded">Set my Name</button>
+        </div>
+    </div>
+    <div class="container mx-auto max-w-5xl shadow-lg rounded-lg mt-10">
+        <div class="px-5 py-5 flex justify-between items-center bg-white border-b-2">
+            <div class="font-semibold text-2xl flex items-center gap-2">
+                <h3>Chat Room</h3>
+                <h3 class="-mb-1 ml-3 tracking-tight text-sm"><span class="onlineusers"></span> People Live.</h3>
+            </div>
+            <h3 class="typing italic text-sm opacity-30 tracking-tight"></h3>
+            <div><span class="username font-semibold">a</span> is chatting <a href="/"
+                    class="bg-red-500 text-white px-3 ml-3 py-2 text-xs rounded-lg">reset now</a>
+            </div>
+        </div>
+        <div class="w-full messagebox px-5 py-10 overflow-y-auto" style="height: 400px;">
+            <div class="flex messages flex-col space-y-4">
+
+            </div>
+        </div>
+        <div class="px-5 py-5 bg-white border-t-2">
+            <div class="relative flex">
+                <textarea placeholder="Type your message"
+                    class="resize-none input w-full px-5 py-3 rounded-full border-2 focus:outline-none focus:border-blue-500"></textarea>
+                <button
+                    class="absolute send right-0 top-1/2 -translate-y-1/2 mr-5 bg-blue-500 text-white py-1 px-4 rounded-full hover:bg-blue-600">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+        integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+        crossorigin="anonymous"></script>
+    <script>
+        const socket = io();
+        let timer;
+
+        const setbtn = document.querySelector(".setbtn");
+        const nameinput = document.querySelector(".nameinput");
+
+        const input = document.querySelector(".input");
+        const messages = document.querySelector(".messages");
+        const messageBox = document.querySelector(".messagebox");
+        const overlay = document.querySelector(".overlay");
+
+        input.addEventListener("input", function (e) {
+            socket.emit("typing");
+        });
+
+
+
+        socket.on("typing", function (name) {
+            document.querySelector(".typing").textContent = `${name.name} is typing...`;
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                document.querySelector(".typing").textContent = "";
+            }, 1200);
+        })
+
+        socket.on("numberofusers", function (number) {
+            document.querySelector(".onlineusers").textContent = number;
+        })
+
+        socket.on("namesetdone", function () {
+            document.querySelector(".username").textContent = nameinput.value.trim();
+            overlay.style.display = "none";
+        })
+
+        setbtn.addEventListener("click", function (e) {
+            if (nameinput.value.trim().length > 0) {
+                socket.emit("nameset", nameinput.value.trim());
+            }
+        })
+
+        nameinput.addEventListener("input", function (e) {
+            let newvalue;
+
+            if (nameinput.value.trim().length > 0) {
+                newvalue = nameinput.value.replace(" ", "_");
+            }
+            else {
+                newvalue = "";
+            }
+            nameinput.value = newvalue;
+        })
+
+        document.querySelector(".send")
+            .addEventListener("click", function () {
+                socket.emit("message", input.value);
+                input.value = "";
+            })
+
+        input.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                if (event.shiftKey) {
+                    const cursorPos = this.selectionStart;
+                    this.value = this.value.slice(0, cursorPos) + "\n" + this.value.slice(cursorPos);
+                    this.selectionStart = this.selectionEnd = cursorPos;
+                } else {
+                    event.preventDefault();
+                    socket.emit("message", input.value);
+                    input.value = "";
+                }
+            }
+        })
+
+        let container = ``;
+        socket.on("message", function (message) {
+            let myMessage = message.id === socket.id;
+            container = `<div class="flex ${myMessage ? 'justify-end' : 'justify-start'}">
+                    <div class="${myMessage ? 'bg-blue-600' : 'bg-zinc-800'} text-white p-3 ${myMessage ? 'rounded-l-lg rounded-br-lg' : 'rounded-r-lg rounded-tl-lg'} ">
+                        <p class="text-sm">${message.name}: ${message.message}</p>
+                    </div>
+                </div>`
+
+            messages.innerHTML += container;
+            messageBox.scrollTop = messageBox.scrollHeight;
+        })
+
+    </script>
+</body>
+
+</html>
