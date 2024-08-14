@@ -35,6 +35,15 @@ body {
   background: #a0a0a08b;
 }
 
+.usersList::-webkit-scrollbar {
+  width: 4px;
+  background: #b2ccec;
+}
+
+.usersList::-webkit-scrollbar-thumb {
+  background: #047857;
+}
+
 .input {
   flex: 0 0 auto;
 }

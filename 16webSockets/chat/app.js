@@ -13,19 +13,15 @@ app.use(express.static(path.join(__dirname, "public")));
 
 let usernames = [];
 let userIds = [];
-// let otherUsers = [];
 
 io.on("connection", (socket) => {
+  // normal chat
   socket.on("username", (data) => {
     if (!usernames.includes(data)) {
       usernames.push(data);
       userIds.push(socket.id);
 
-      // online users =>
-      // let index = userIds.indexOf(socket.id);
-      // otherUsers = usernames.filter((_, i) => i !== index);
-
-      // socket.emit("otherUsersList", otherUsers);
+      socket.broadcast.emit("otherOnlineUser", usernames);
 
       socket.emit("navigate", { success: true });
       socket.emit("username", { name: data, id: socket.id });
@@ -51,6 +47,8 @@ io.on("connection", (socket) => {
     io.emit("message", { msg: data.msg, id: userIds[index], name });
   });
 
+  // chat room
+
   socket.on("disconnect", () => {
     let index = userIds.indexOf(socket.id);
     let name = usernames[index];
@@ -60,12 +58,21 @@ io.on("connection", (socket) => {
       usernames.splice(index, 1);
       io.emit("exit", { name });
       io.emit("onlineUsers", usernames.length);
+      io.emit("otherOnlineUser", usernames);
     }
   });
 });
 
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+app.get("/joinroom", (req, res) => {
+  res.render("joinroom");
+});
+
+app.get("/chatroom", (req, res) => {
+  res.render("chatroom");
 });
 
 server.listen(3000, () => {

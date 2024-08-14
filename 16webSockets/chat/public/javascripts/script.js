@@ -76,18 +76,18 @@ socket.on("wlcmMsgSelf", (data) => {
   messageBox.scrollTop = messageBox.scrollHeight;
 });
 
-// online users =>
-// socket.on("otherUsersList", (data) => {
-//   console.log(data);
-//   data.forEach((el) => {
-//     console.log(el);
-//     container = `
-//               <li class="text-emerald-950 bg-white px-3 py-2 font-semibold text-sm rounded-lg shadow">${el}</li>
-//     `;
-//     usersList.innerHTML += container;
-//   });
-//   usersList.scrollTop = usersList.scrollHeight;
-// });
+socket.on("otherOnlineUser", (data) => {
+  usersList.innerHTML = "";
+  data.forEach((elm) => {
+    if (elm !== yourName.textContent) {
+      container = `
+                  <li class="text-emerald-950 bg-white px-3 py-2 mr-1 font-semibold text-sm rounded-lg shadow">${elm}</li>
+                `;
+      usersList.innerHTML += container;
+    }
+  });
+  usersList.scrollTop = usersList.scrollHeight;
+});
 
 exit.addEventListener("exit", () => {
   active.classList.remove("hidden");
