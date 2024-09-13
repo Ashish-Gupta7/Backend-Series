@@ -411,14 +411,69 @@ When a request comes in, it is sent back as a response at a specified time.
 This provides a streaming platform. The request is not stopped anywhere and is responded to immediately
 
 ## http version
+
 1. virsion1 -> TCP
 2. virsion2 -> TCP
 3. virsion3 -> TCP and UDP
 
 ## Thread
+
 example ke liye mere pas 4 thread hai, 1st req pr 1 thread busy ho jayega, , 2nd req pr 2 thread busy ho jayega, 3rd req pr 3 thread busy ho jayega, 4th req pr 4 thread busy ho jayega. jaise hi thread req ka kaam poora krte jate hai usi time pr wo free ho jata hai aur agle req ke liye taiyar rahta hai.
 aur yadi saare thread busy ho jate hai to agla req pending pr tb tk rhta hai jb tk ki koi thread free na ho jaye.
 
 Node.js single-threaded environment hota hai. Node.js single-threaded event-driven architecture ko use karta hai. Matlab, Node.js ek hi thread ka use karke multiple clients ke requests ko handle karta hai. Yeh approach kaafi efficient hoti hai jab non-blocking I/O operations ki baat aati hai.
 
 Lekin Node.js ka event loop aur asynchronous nature usko multi-threaded jaise behave karne mein madad karta hai. Jab bhi koi I/O operation hota hai, jaise file reading, network request, etc., toh yeh operations background mein perform hote hain aur jab operation complete hota hai tab callback function ko execute karta hai. Is tarah se Node.js high concurrency achieve kar leta hai bina multiple threads create kiye.
+
+## Primary Memory vs Secondary Memory
+
+1. Primary Memory (Main Memory):
+   Example: RAM (Random Access Memory).
+   Speed: Very fast, as it is directly connected to the CPU.
+   Storage Type: Volatile, meaning data is lost when the power is turned off.
+   Purpose: Stores data that is actively being used or processed by the CPU.
+   Capacity: Generally smaller (measured in GBs).
+   Cost: More expensive per unit of storage compared to secondary memory.
+   Role: Temporarily stores data and instructions that the CPU is currently using.
+2. Secondary Memory (Auxiliary Memory):
+   Example: Hard Drive, SSD, CD, USB drives.
+   Speed: Slower compared to primary memory.
+   Storage Type: Non-volatile, meaning data is retained even after the power is off.
+   Purpose: Stores data and files long-term, even when not in use.
+   Capacity: Larger (measured in TBs).
+   Cost: Less expensive per unit of storage.
+   Role: Provides long-term storage for data and applications.
+
+Primary memory, ko secondary memory ya secondary ko primary ki tarah use nhi kiya ja skta hai. iski wajah to uper key points se samajh aa jati hai.
+primary ko kisi bhi tarah se secondary ki tarah use nhi kr skte lekin secondary ko kuchh had tk primary ki tarah use kr skte hai.
+
+### PC ya laptop lag ya hang karne ke kai reasons ho sakte hain. Yahan kuch common reasons aur unke solutions hain:
+
+- Problem: Jab aap multiple applications ya heavy software use karte hain aur aapke paas sufficient RAM nahi hoti, toh system slow ho sakta hai.
+- Solution: RAM upgrade karna ya unnecessary applications ko close karna.
+
+#### Explaination
+
+Jab aap kisi application ko open karte hain, toh wo application secondary memory (jaise hard drive ya SSD) se primary memory (RAM) mein load hoti hai. RAM ko fast access speed ki wajah se applications run karne ke liye use kiya jata hai, aur CPU in applications ko execute karta hai.
+
+Jab aap ek saath kai applications ya high-power applications open karte hain, toh RAM ka space quickly fill ho jata hai kyunki RAM ki capacity limited hoti hai. Jab RAM full ho jati hai, operating system secondary memory ko virtual memory ke roop mein use karna shuru kar deta hai. Virtual memory secondary memory ka ek portion hota hai jo RAM se exceed ho chuki data ko store karta hai.
+
+Lekin, secondary memory ki access speed RAM se bahut kam hoti hai. Iska matlab hai ki jab data RAM se secondary memory (virtual memory) mein swap hota hai, toh data ko access karne mein zyada samay lagta hai. Is slow access ki wajah se system ki performance slow ho jati hai, aur applications ko response time mein delay hota hai.
+
+Agar system ki RAM aur virtual memory dono hi overloaded ho jati hain, toh aapko lag ya hang issues face karne padte hain. System hang kar sakta hai ya performance degrade ho sakti hai kyunki CPU ko data ko access karne mein zyada waqt lagta hai aur applications smoothly nahi chal pati hain.
+
+Toh, jab RAM aur virtual memory overloaded hoti hai, tab system hang ya lag karne lagta hai, kyunki data access aur processing me delays aati hain.
+
+## FPS (Frames Per Second)
+
+Ye ek metric hai jo video ya animation ki smoothness aur quality ko measure karta hai. FPS batata hai ki ek second mein kitne frames (ya images) display kiye ja rahe hain. Zyada FPS ka matlab hai smoother aur more fluid motion, jabki kam FPS se motion choppy ya jerky lag sakta hai.
+
+### Example:
+
+24 FPS: Ye typical frame rate hota hai movies aur films ke liye. Ye cinematic look provide karta hai.
+30 FPS: Ye standard frame rate hai jo TV shows aur many online videos mein use hota hai.
+60 FPS: Ye common frame rate hai gaming aur high-definition videos ke liye jo smooth aur responsive experience provide karta hai.
+
+#### Metric
+
+Metric ek standardized unit hai jo kisi specific parameter ko measure karne ke liye use hota hai. Metrics ko quantitative data ko measure karne aur compare karne ke liye use kiya jata hai, aur ye specific performance indicators ya characteristics ko define karte hain.
