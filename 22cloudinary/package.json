@@ -1,0 +1,19 @@
+{
+  "name": "22cloudinary",
+  "description": "Cloudinary ek cloud-based media management platform hai jo developers ko images aur videos ko efficiently store, manage, optimize, aur deliver karne ki facility deta hai. Yah ek all-in-one solution hai jo media assets ko web aur mobile applications ke liye use karta hai.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^2.4.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
