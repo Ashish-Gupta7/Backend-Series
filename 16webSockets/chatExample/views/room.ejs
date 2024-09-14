@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= roomName %> Chat Room
+  </title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <h1>
+    <%= roomName %> Chat Room
+  </h1>
+  <div id="chat">
+    <div id="messages"></div>
+    <input id="messageInput" type="text" placeholder="Type a message...">
+    <button id="sendMessage">Send</button>
+  </div>
+  <div id="userList"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    const roomName = '<%= roomName %>';
+
+    socket.emit('joinRoom', { room: roomName, username: 'User' });
+
+    socket.on('chatMessage', (message) => {
+      const messageElem = document.createElement('div');
+      messageElem.textContent = message;
+      document.getElementById('messages').appendChild(messageElem);
+    });
+
+    socket.on('updateUserList', (users) => {
+      const userList = document.getElementById('userList');
+      userList.innerHTML = '';
+      users.forEach(user => {
+        const userElem = document.createElement('div');
+        userElem.textContent = user.username;
+        userList.appendChild(userElem);
+      });
+    });
+
+    document.getElementById('sendMessage').addEventListener('click', () => {
+      const message = document.getElementById('messageInput').value;
+      socket.emit('chatMessage', { room: roomName, message });
+      document.getElementById('messageInput').value = '';
+    });
+  </script>
+</body>
+
+</html>
