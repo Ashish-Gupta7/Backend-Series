@@ -310,25 +310,93 @@ Aap market se ya Monitor mode ko enable karne ke liye aapko kisi specific comman
 
 koi website hai yadi uss pr hmm koi chat ya data input krte hai to wo rays ki form me surf hoti hai aur unhi rays me data hota hai jise monitor mode ki madad se padha ja skta hai. ab yadi website http pr hogi to hmm uska data padh skte hai aur yadi website https pr bani hogi to hmm uska data nhi padh skte hai hmm https ka data access to kr lege lekin wo data kuchh code ke form me likha hoga aur iss tarah ke text ko encripted text kahte hai.
 
-## Framework and Library
+## 📚 Library vs 🧱 Framework – Poori Detail Mein (Hinglish)
 
-Framework ek software development ke liye ek structured environment ya foundation hoti hai jo developers ko application banane mein madad karti hai. Ye pre-defined code libraries, reusable code templates, aur tools ko provide karti hai jo application development ko asaan aur efficient banati hai.
+---
 
-Library:
+### ⚙️ **Ek Line Mein Farq:**
 
-Library ek collection hoti hai pre-written code ka jo specific functionality provide karta hai.
-Developers libraries ka istemal apne existing projects mein kar sakte hain, jahan unhe specific functionality ki zarurat hoti hai.
-Libraries typically modular hoti hain, matlab ki aap unke individual components ko select kar sakte hain aur apne code mein integrate kar sakte hain.
-Example: NumPy (Python numerical computing library), React (JavaScript library for building user interfaces).
+> **Library** aapke code ke control mein hoti hai.  
+> **Framework** aapke code ko control karta hai.
 
-Framework:
+---
 
-Framework ek complete environment hota hai jo application development ko support karta hai. Ye ek set of rules, conventions, aur pre-defined structures provide karta hai.
-Developers frameworks ka istemal karte hain apne applications ko develop karne ke liye. Frameworks specific architecture aur workflow follow karte hain.
-Frameworks typically opinionated hoti hain, matlab ki wo developers ko ek specific way mein kaam karne par majboor karti hain.
-Example: Django (Python web framework), Angular (JavaScript framework for building web applications).
+### 📚 Library Kya Hoti Hai?
 
-Overall, A library is a collection of pre-written code that can be used to perform specified tasks and a framework is a set of pre-written code that provides a structure for developing software applications.
+Library ek **pre-written code** ka collection hota hai jo specific kaam karta hai. Aap library ke functions ya modules ko **jab chahein tab use** kar sakte hain. **Aapka code main hota hai**, aur aap decide karte hain ki library ko kab bulana hai.
+
+#### 🔹 Features:
+
+- **Utility-based** hoti hai
+- **Reusable functions** deti hai
+- **Main control developer ke paas hota hai**
+- Code zyada flexible hota hai
+
+#### 🔸 Real-life Example:
+
+> Ghar banate waqt **library ek electrician** hai. Jab tumhe light lagwani ho, tum electrician ko bula kar kaam karwate ho. Tumhara control hai – tum jab chaaho bulalo.
+
+#### 📦 Examples of Libraries:
+
+- **React** – UI banane ke liye (JS)
+- **Lodash** – JavaScript utilities
+- **NumPy** – Python numerical library
+- **jQuery** – DOM manipulation ke liye
+
+---
+
+### 🧱 Framework Kya Hota Hai?
+
+Framework ek **complete development environment** hota hai. Ye ek **structure, rules, aur workflow** provide karta hai jiske according aapko apna code likhna hota hai. Isme **Inversion of Control (IOC)** hota hai – framework aapka code chalata hai.
+
+#### 🔹 Features:
+
+- **Full architecture** deta hai
+- Developer ka code framework ke structure ke andar likha jata hai
+- **Framework hi decide karta hai** ki aapka code kab aur kaise chalega
+- Code likhne ka ek fixed tareeka hota hai
+
+#### 🔸 Real-life Example:
+
+> Ghar banate waqt **framework ek builder company** hai. Wo decide karegi ki ghar ka design kaisa hoga, kis order mein kaam hoga. Tum bas andar ka kaam karte ho.
+
+#### 📦 Examples of Frameworks:
+
+- **Angular** – Frontend web framework (JS)
+- **Django** – Python web framework
+- **Laravel** – PHP web framework
+- **Spring** – Java framework
+
+---
+
+### 🔁 Library vs Framework – Comparison Table:
+
+| Feature            | 📚 Library                   | 🧱 Framework                     |
+| ------------------ | ---------------------------- | -------------------------------- |
+| **Control**        | Aapke paas                   | Framework ke paas (IOC)          |
+| **Usage**          | Specific tasks ke liye       | Full application banane ke liye  |
+| **Flexibility**    | High – aap decide karte ho   | Low – predefined rules hote hain |
+| **Code Structure** | Free-flow, modular           | Structured and opinionated       |
+| **Examples**       | React, Lodash, NumPy, jQuery | Angular, Django, Laravel         |
+
+---
+
+### 🤔 React Library Hai, Framework Nahi – Kyun?
+
+- React **sirf UI banane** ke kaam aata hai.
+- Isme routing, state management, data handling alag tools se karna padta hai (jaise React Router, Redux, etc.)
+- Isliye React **modular aur flexible** hai – ye **library** hai.
+
+---
+
+### ✅ Summary:
+
+- 🧰 **Library** = Tool jise aap use karte ho
+- 🏗️ **Framework** = Structure jisme aap kaam karte ho
+
+---
+
+Agar aur examples ya diagram chahiye to batao, mai aur relatable explanation de sakta hoon! ✅
 
 ## C and D drive
 
