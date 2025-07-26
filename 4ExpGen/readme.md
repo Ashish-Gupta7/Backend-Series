@@ -9,7 +9,7 @@ install globally => npm i express-generator -g
 ### To create new App/project anywhere
 
 (1.) open cmd => agar aap ki directory desktop par hai to theek hai nhi to directory ko desktop pr move karo. => cd Desktop, kai logo ke laptop me nhi aayega agar aisa ho to OneDrive likhe phie enter, uske baad cd Desktop likhe.
-(2.) create new app/project => express appname --view=ejs
+(2.) create new app/project => npx express-generator appname --view=ejs
 (3.) now use two commands => (a.) cd appname (mtlb ab aap apni directory ko change krke appname jo bhi hai uss pr lana chahte hai.)
 (b.) sabhi dependencies ko install karne ke liye => npm i
 (4.) open it on vs code => aap desktop me jakr bhi appname wale folder ko vs code me open kr skte hai ya phir cmd se direct vs code ko usi folder ke sath open krne ke liye "code ." likhe. double qoutes me nhi.
@@ -67,9 +67,9 @@ res.render("index");
     });
 
     jab bhi server restart ho jata hai to jo session bana tha wo session bhi delete ho jati hai.
-    resave:false => agar session ki value change na hui ho to fir se session ko save na kare.
-    saveUninitialized:false => agar session ki value change na hui ho to fir se session ko save na kare.
-    secret: "secret" => session ko encrypt krne ke liye use kuchh string dete hai aur isi ke basis pr session ko encrypt kiya jata hai.
+    resave:false => Agar session me koi change nahi hua, to usko dubara save na karo.
+    saveUninitialized:false => Agar session abhi tak initialize (koi data set) nahi hua, to session ko store mat karo.
+    secret: "secret" => Session ID ko sign karne ke liye use hota hai, taaki koi cookie tamper(modify ya bina permission ke change) na kar sake.
 
 ### cookie
 
@@ -78,7 +78,7 @@ installation => npm i cookie-parser, waise jab hum express-generator ko install 
 go to routes => index.js
 (1.) create =>
 
-**_hum browser pr jab bhi kuchh bhi search krte hai to wo ek req ke roop me server ke pas jata hai aur phir server se res ke roop me kuchh data document page pr dikhata hai. yaha hum / route chalate hai to req server pr gayi kyuki cookies browser pr store hoti hai isliye jo req aayi hoti hai wo server se cookie ka res lekr browser me store krti hai._**
+**_Jab hum browser me koi URL open karte hain, tab browser server ko ek HTTP request bhejta hai (jaise GET /). Server us request ko process karta hai aur HTTP response ke form me HTML, CSS, JS ya data return karta hai, jo browser me render hokar page ke roop me dikhai deta hai. Agar server response me Set-Cookie header bhejta hai, to browser wo cookie store kar leta hai. Agli baar jab bhi browser usi domain par request bhejega, wo cookie apne request ke sath automatically bhej dega (Request Header me Cookie key ke sath). Is tarah server user-specific data maintain kar sakta hai. Cookies browser me store hoti hain, lekin unhe server set karta hai aur future requests me authentication, sessions, aur preferences maintain karne ke liye use karta hai._**
 
     router.get("/", (req, res) => {
         res.cookie("name", "shiva");
